@@ -259,7 +259,7 @@ header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap
     <button class="nav-btn" onclick="shiftView(14)">›</button>
     <select class="view-sel" onchange="changeView(this.value)">
       <option value="30">30 dias</option>
-      <option value="60">60 dias</option>
+      <option value="60" selected>60 dias</option>
       <option value="90">90 dias</option>
     </select>
   </div>
@@ -269,7 +269,7 @@ header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap
 </div>
 
 <!-- BACKLOG PANEL -->
-<div class="backlog-panel collapsed" id="backlogPanel">
+<div class="backlog-panel expanded" id="backlogPanel">
   <div class="backlog-header" onclick="toggleBacklog()">
     <span class="backlog-title">Backlog de atividades</span>
     <span class="backlog-count" id="backlogCount">0</span>
@@ -439,7 +439,7 @@ const MONTHS_PT=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','no
 
 const today=new Date();today.setHours(0,0,0,0);
 let viewStart=(()=>{const d=new Date(today);d.setDate(d.getDate()-7);return d;})();
-let viewDays=30,tasks=[],backlog=[],nextId=1,nextBId=1;
+let viewDays=60,tasks=[],backlog=[],nextId=1,nextBId=1;
 let activeFilter=null,editingId=null;
 
 // drag state
